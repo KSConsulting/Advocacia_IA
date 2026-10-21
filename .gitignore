@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Variáveis de ambiente — nunca versionar
+.env
+.env.*
+!.env.example
+supabase/functions/.env
+supabase/.env
+
+# Material de origem (workflows do n8n com e-mail, IDs de credenciais e da
+# planilha do escritório que originou o sistema). Fica na máquina, fora do Git.
+legado/
+# Cópia do mesmo material (workflows do n8n + prompts já em docs/especificacao).
+Sistema Advocacia/
+
+# Editor e sistema
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.sw?
+
+# CLI do Supabase (estado local de execução)
+supabase/.temp
+supabase/.branches
+
+# Estado local do Claude Code
+.claude/scheduled_tasks.lock

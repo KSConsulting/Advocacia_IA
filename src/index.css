@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* As fontes (Playfair Display + DM Sans) são carregadas no index.html. */
+
+/* Tokens — Light Mode */
+:root {
+  --bg-base: #F8F6F1;
+  --bg-sidebar: #1C2B3A;
+  --bg-card: #FFFFFF;
+  --border-card: #E8E2D9;
+  --primary: #1C2B3A;
+  --primary-hover: #243547;
+  --primary-text: #FFFFFF;
+  --accent: #C9A84C;
+  --accent-light: #FBF5E6;
+  --text-main: #1C2B3A;
+  --text-muted: #7A7060;
+  --success: #4A7C59;
+  --warning: #D4834A;
+  --danger: #B94040;
+  --sidebar-text: #FFFFFF;
+  --sidebar-muted: #8BA0B4;
+  --sidebar-active: #243547;
+  --sidebar-border: #2D3F52;
+}
+
+/* Tokens — Dark Mode */
+.dark {
+  --bg-base: #111820;
+  --bg-sidebar: #0D1520;
+  --bg-card: #1A2535;
+  --border-card: #253040;
+  --primary: #C9A84C;
+  --primary-hover: #D4B86A;
+  --primary-text: #111820;
+  --accent: #C9A84C;
+  --accent-light: #2A2215;
+  --text-main: #EAE4D8;
+  --text-muted: #8A9AAA;
+  --success: #4A7C59;
+  --warning: #D4834A;
+  --danger: #B94040;
+  --sidebar-text: #EAE4D8;
+  --sidebar-muted: #5A7090;
+  --sidebar-active: #1A2535;
+  --sidebar-border: #1A2535;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: 'DM Sans', sans-serif;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Peças repetidas em toda tela — o design system da especificação, em classes. */
+@layer components {
+  .card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+  }
+
+  .campo {
+    width: 100%;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-card);
+    border-radius: 8px;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .campo:focus {
+    border-color: var(--accent);
+  }
+  .campo:disabled {
+    opacity: 0.6;
+  }
+
+  .rotulo {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .texto-suave {
+    color: var(--text-muted);
+  }
+
+  .tabela {
+    width: 100%;
+    font-size: 0.875rem;
+    border-collapse: collapse;
+  }
+  .tabela th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-card);
+    white-space: nowrap;
+  }
+  .tabela td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-card);
+    vertical-align: middle;
+  }
+  .tabela tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .tabela tr.clicavel {
+    cursor: pointer;
+  }
+  .tabela tr.clicavel:hover td {
+    background-color: var(--accent-light);
+  }
+}
